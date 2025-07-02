@@ -15,11 +15,13 @@ public class HistoricoController {
     @Autowired
     HistoricoService historicoService;
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/create")
     public void criarHistorico(@RequestBody Historico historico) {
         historicoService.salvarHistorico(historico);
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/find-all")
     public List<Historico> findAll(){
         return historicoService.findAll();
